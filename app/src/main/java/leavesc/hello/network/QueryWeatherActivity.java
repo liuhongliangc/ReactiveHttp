@@ -2,7 +2,10 @@ package leavesc.hello.network;
 
 import android.arch.lifecycle.ViewModel;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -45,6 +48,7 @@ public class QueryWeatherActivity extends BaseActivity {
     }
 
     private void handlerWeather(Weather weather) {
+        Log.e("aaaaa", "handlerWeather: ");
         StringBuilder result = new StringBuilder();
         for (Weather.InnerWeather.NearestWeather nearestWeather : weather.getData().getWeather()) {
             result.append("\n\n").append(new Gson().toJson(nearestWeather));
